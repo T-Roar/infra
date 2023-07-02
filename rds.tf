@@ -34,6 +34,8 @@ resource "aws_db_subnet_group" "rds_subnet_group" {
   subnet_ids = [aws_subnet.db_subnet[each.key].id]
 }
 
+
+
 resource "aws_db_instance" "primary_rds_instance" {
   for_each = var.primary_rds_instances
 

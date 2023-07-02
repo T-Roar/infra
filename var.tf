@@ -163,9 +163,12 @@ variable "dbsubnet_config" {
   default = {
     "us-east-1" = {
       cidr_block = "10.0.7.0/24"
+      availability_zones = ["us-east-1a", "us-east-1b"]
     }
     "us-west-1" = {
       cidr_block = "172.128.7.0/24"
+      availability_zones = ["us-west-1c","us-west-1d"]
+
     }
   }
 }

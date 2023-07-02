@@ -53,14 +53,11 @@ resource "aws_subnet" "db_subnet" {
 
   vpc_id            = aws_vpc.vpc[each.key].id
   cidr_block        = each.value.cidr_block
-  availability_zone = data.aws_availability_zones.available.names[0]
+  availability_zone = element(slice(data.aws_availability_zones.available.names, 0, 2), index(keys(var.dbsubnet_config), each.key) % 2)
 
   tags = {
     Name = "db_subnet-${each.key}"
   }
 }
-
-
-
 
 

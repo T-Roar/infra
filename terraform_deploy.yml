@@ -3,7 +3,7 @@ name: Terraform Deployment
 on:
   push:
     branches:
-      - main  # Adjust the branch name to trigger the workflow on a different branch if needed.
+      - master  # Adjust the branch name to trigger the workflow on a different branch if needed.
 
 jobs:
   deploy:
